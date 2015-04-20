@@ -26,9 +26,9 @@ class UserListGenerator {
 
     /**
      * @param array $userNames Array with myanimelist.net usernames
-     * @param $tempDir path to the temp directory, must be read- and writable
-     * @param $outputDir path to the output directory, must be read- and writable
-     * @param $templateFile path to the template file
+     * @param string $tempDir path to the temp directory, must be read- and writable
+     * @param string $outputDir path to the output directory, must be read- and writable
+     * @param string $templateFile path to the template file
      * @throws InvalidArgumentException
      */
     public function __construct(array $userNames, $tempDir, $outputDir, $templateFile){
@@ -72,7 +72,7 @@ class UserListGenerator {
     }
 
     /**
-     * @param $entries max entries per page
+     * @param int $entries max entries per page
      */
     public function setMaxEntriesPerPage($entries){
         $this->maxEntriesPerPage = (integer) abs($entries);
@@ -157,7 +157,7 @@ class UserListGenerator {
     /**
      * Downloads the xml containing the manga / anime informations from myanimelist. Because of
      * MAL's DDOS protection curl, file_get_contents, ect won't work.
-     * @param $type anime or manga
+     * @param string $type anime or manga
      */
     private function downloadFiles($type){
         if ($type !== 'anime' && $type !== 'manga'){
@@ -310,8 +310,8 @@ class UserListGenerator {
 
     /**
      * Anime have episodes, mangas chapter or volumes. Return the correct one.
-     * @param $user
-     * @param $series
+     * @param object $user
+     * @param object $series
      * @return string
      */
     private function getEpisodeChapterVolume($user, $series){
