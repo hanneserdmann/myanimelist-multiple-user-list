@@ -12,13 +12,13 @@ $outputDirectory    = $currentDirectory . 'public/';
 $templateFile       = $currentDirectory . 'template.html';
 
 # included users
-$userList = [   'Areko',        'belarion',     'Chiar',        'chup1n',   'CwybuG',
-                'hanny',        'DorTeX',       'rmDuha',       'fizik',    'GiZmO0',
-                'gr1zzlY',      'heidih',       'IllDepence',   'jaNSENN',  'jaysemilia',
-                'Jun',          'lawlai',       'LUNTE',        'luq89',    'M159852',
-                'MeisterEDE',   'nerinerineri', 'myNipah',      'noxxx',    'Prktschz',
-                'quiKKK',       'cekjaja',      'rm_Stallion',  'slixxer',  'thextor',
-                'zephsorizor'
+$userList = [   'Areko',        'belarion',     'Chiar',        'chup1n',           'CwybuG',
+                'hanny',        'DorTeX',       'rmDuha',       'fizik',            'GiZmO0',
+                'gr1zzlY',      'heidih',       'IllDepence',   'jaNSENN',          'jaysemilia',
+                'Jun',          'lawlai',       'LUNTE',        'luq89',            'M159852',
+                'MeisterEDE',   'nerinerineri', 'myNipah',      'noxxx',            'Prktschz',
+                'quiKKK',       'cekjaja',      'rm_Stallion',  'slixxer',          'thextor',
+                'zephsorizor',  'xcllnt',       'Fabbo-',       'colorandi_causa'
             ];
 
 # generate list
