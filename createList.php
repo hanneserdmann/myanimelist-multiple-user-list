@@ -18,7 +18,7 @@ $userList = [   'Areko',        'belarion',     'Chiar',        'chup1n',       
                 'Jun',          'lawlai',       'LUNTE',        'luq89',            'M159852',
                 'MeisterEDE',   'nerinerineri', 'myNipah',      'noxxx',            'Prktschz',
                 'quiKKK',       'cekjaja',      'rm_Stallion',  'slixxer',          'thextor',
-                'zephsorizor',  'xcllnt',       'Fabbo-',       'colorandi_causa'
+                'zephsorizor',  'xcllnt',       'Fabbo-',       'colorandi_causa',  'Nippy'
             ];
 
 # generate list
