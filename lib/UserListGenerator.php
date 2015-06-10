@@ -175,6 +175,8 @@ class UserListGenerator {
                         ('> "' . $this->tempDir . uniqid() . '.xml" ');
             }
             exec($cmd);
+            // Wait to avoid "too many requests" error
+            sleep(1);
         }
 
         # wait for the file system to write the xmls completely
