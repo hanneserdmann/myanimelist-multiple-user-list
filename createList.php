@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 require_once 'lib/UserListGenerator.php';
 
 # directory paths
-$currentDirectory   = '/home/thextor/www/rmanimelist/';
+$currentDirectory   = '/home/thextor/html/rmanimelist/';
 $tempDirectory      = $currentDirectory . 'temp/';
 $outputDirectory    = $currentDirectory . 'public/';
 $templateFile       = $currentDirectory . 'template.html';
@@ -23,6 +23,14 @@ $userList = [   'Areko',        'belarion',     'Chiar',        'chup1n',       
             ];
 
 # generate list
-$listGenerator = new MALMultipleUserListGenerator\UserListGenerator($userList, $tempDirectory, $outputDirectory, $templateFile);
-$listGenerator->generateAnimeList();
-$listGenerator->generateMangaList();
+try{
+    $listGenerator = new MALMultipleUserListGenerator\UserListGenerator($userList, $tempDirectory, $outputDirectory, $templateFile);
+    $listGenerator->generateAnimeList();
+    $listGenerator->generateMangaList();
+}
+catch(Exception $e){
+    print   "\nERROR"   .
+            "\n====="   .
+            "\n\n"      .
+            $e->getMessage() . "\n\n";
+}

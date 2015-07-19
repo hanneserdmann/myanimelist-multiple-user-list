@@ -18,7 +18,7 @@ class UserListGenerator {
     private $tempDir                    = '',
             $outputDir                  = '',
             $templateFile               = '',
-            $maxParallelDownloads       = 5,
+            $maxParallelDownloads       = 3,
             $waitSecondsForFileSystem   = 1,
             $maxEntriesPerPage          = 200,
             $globalAvgScore             = 0.0,
@@ -29,19 +29,19 @@ class UserListGenerator {
      * @param string $tempDir path to the temp directory, must be read- and writable
      * @param string $outputDir path to the output directory, must be read- and writable
      * @param string $templateFile path to the template file
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      */
     public function __construct(array $userNames, $tempDir, $outputDir, $templateFile){
         $this->userNames = array_unique($userNames);
 
         if  ($this->checkDirectoryPermissions($tempDir)) $this->tempDir = $tempDir;
-        else throw new InvalidArgumentException('The temp directory has to be writable and readable!');
+        else throw new \InvalidArgumentException('The temp directory has to be writable and readable!');
 
         if  ($this->checkDirectoryPermissions($outputDir)) $this->outputDir = $outputDir;
-        else throw new InvalidArgumentException('The output directory has to be writable and readable!');
+        else throw new \InvalidArgumentException('The output directory has to be writable and readable!');
 
         if  (is_file($templateFile) && is_readable($templateFile)) $this->templateFile = $templateFile;
-        else throw new InvalidArgumentException('The template file is not accessible!');
+        else throw new \InvalidArgumentException('The template file is not accessible!');
 
         $this->deleteFilesInDirectory($this->tempDir);
     }
@@ -176,7 +176,7 @@ class UserListGenerator {
             }
             exec($cmd);
             // Wait to avoid "too many requests" error
-            sleep(1);
+            sleep(2);
         }
 
         # wait for the file system to write the xmls completely
